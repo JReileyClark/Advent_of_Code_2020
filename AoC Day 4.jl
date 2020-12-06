@@ -135,20 +135,20 @@ Count the number of valid passports - those that have all required fields and va
 
 =#
 
-#lets create a passport type that has the desired attributes
+# #lets create a passport type that has the desired attributes
 
-struct Passport
-    byr::Int16 # Birth Year
-    iyr::Int16 # Year Passport issued
-    eyr::Int16 # Year Passpord expires
-    hgt::String # height in inches or centimeters
-    hcl::String # hair Color
-    ecl::String # eye Color
-    pid::String # passport ID #
-    cid::String # Country ID #
+# struct Passport
+#     byr::Int16 # Birth Year
+#     iyr::Int16 # Year Passport issued
+#     eyr::Int16 # Year Passpord expires
+#     hgt::String # height in inches or centimeters
+#     hcl::String # hair Color
+#     ecl::String # eye Color
+#     pid::String # passport ID #
+#     cid::String # Country ID #
 
-end
-
+# end
+# Decided not to use passport type. Just going for a straightforward solve.
 # Lets create functions for each of our passport attributes that apply the test
 
 function ✓byr(birth_year)
@@ -167,12 +167,7 @@ function ✓eyr(expiration_year)
 end
 
 function ✓hgt(height)
-    """
-    ✓hgt(height::String)
 
-    returns true if passes validations, false otherwise.
-
-    """
     height = string(height)
     result =  match(r"^(\d{2,3})(\w{2})$",height)
 
